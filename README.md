@@ -5,7 +5,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|e-mail|string|null: false, unique: true|
+|email|string|null: false, add_index, unique: true|
 
 ### Association
 - has_many :groups, through :members
