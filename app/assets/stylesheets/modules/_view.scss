@@ -1,0 +1,147 @@
+header {
+  background-color: $skyblue;
+  color: $plane_white;
+  text-align: center;
+}
+
+.left-content {
+  width: 300px;
+  float: left;
+  &__user {
+    background-color: $dark_blue;
+    color: $plane_white;
+    padding: 37px 20px 40px 20px;
+    font-weight: bold;
+    @include clearfix();
+    &__name {
+      width: 220px;
+      float: left;
+      p {
+        font-weight: bold;
+      }
+    }
+    &__nav {
+      width: 40px;
+      float: right;
+      a {
+        float: right;
+        color: $plane_white;
+        .padding {
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+  &__group {
+    height: 800px;
+    background-color: $blue;
+    color: $plane_white;
+    padding: 0 20px;
+    &__name {
+      padding: 20px 0 0 0;
+      font-size: 15px;
+    }
+    &__message {
+      padding: 5px 0 20px 0;
+      font-size: 11px;
+    }
+  }
+}
+
+.main-content {
+  height: 800px;
+  float: left;
+  width: calc(100vw - 300px);
+  &__header {
+    border-bottom: 1px solid $dark_white;
+    padding: 0 40px 0 40px;
+    @include clearfix();
+    &__section {
+      float: left;
+      &__group {
+        padding: 35px 0 0 0;
+        font-size: 20px;
+        color: $dark_gray;
+      }
+      &__member {
+        padding: 15px 0 0 0;
+        font-size: 12px;
+        color: $gray;
+      }
+    }
+    a {
+      margin: 28px 0;
+      padding: 0 20px;
+      border: solid 2px $plane_blue;
+      text-align: center;
+      float: right;
+      height: 40px;
+      line-height: 2.5;
+      color: $plane_blue;
+      text-decoration: none;
+    }
+  }
+  &__body {
+    height: 704px;
+    background-color: $plen_gray;
+    padding: 6px 40px 0 40px;
+    &__info {
+      padding-top: 40px;
+      @include clearfix();
+      &__name {
+        float: left;
+        padding-right: 10px;
+        font-size: 16px;
+        color: $navy_blue;
+        p {
+          font-weight: bold;
+        }
+      }
+      &__time {
+        float: left;
+        font-size: 12px;
+        color: $gray;
+        padding-top: 5px;
+      }
+    }
+    &__message {
+      padding-top: 10px;
+      font-size: 14px;
+      color: $navy_blue;
+    }
+  }
+  &__footer {
+    height: 90px;
+    background-color: $ash;
+    &__block {
+      padding: 20px 40px;
+      &__form {
+        padding: 0 10px;
+        width: calc(100% - 130px);
+        float: left;
+        background-color: $plane_white;
+        .textform {
+          height: 50px;
+          width: 96%;
+          border: none;
+        }
+        .textimage {
+          display: none;
+        }
+      }
+      a {
+        font-size:16px;
+        font-weight:bold;
+        text-align:center;
+        background-color: $plane_blue;
+        line-height: 3;
+        height: 50px;
+        padding: 0 25px;
+        float: right;
+        color:$plane_white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
