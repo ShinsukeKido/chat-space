@@ -1,0 +1,19 @@
+.left-content
+  .left-content__user
+    .left-content__user__name
+      %p
+        = current_user.name
+    .left-content__user__nav
+      = link_to edit_user_path(current_user) do
+        = fa_icon "cog"
+      = link_to new_group_path do
+        = fa_icon "pencil-square-o", class: "padding"
+  .left-content__group
+    - current_user.groups.each do |group|
+      = link_to group_messages_path(group) do
+        .left-content__group__name
+          %p
+            = group.name
+        .left-content__group__message
+          %p
+            メッセージはまだありません。
