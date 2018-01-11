@@ -26,26 +26,29 @@ $(function() {
 
   $(".chat-group-form__input.search").on("keyup", function() {
     var input = $(".chat-group-form__input.search").val();
-    $.ajax({
-      type: 'GET',
-      url: '/users',
-      data: { keyword: input },
-      dataType: 'json'
-    })
-    .done(function(users) {
-      $("#user_search_result").empty();
-      if (users.length !== 0) {
-        users.forEach(function(user){
-          appendUser(user);
-        });
-      }
-      else {
-        appendNoUser("一致するユーザーはいません");
-      }
-    })
-    .fail(function() {
-      alert('ユーザー検索に失敗しました');
-    })
+    var blank = "";
+    if (input != blank) {
+      $.ajax({
+        type: 'GET',
+        url: '/users',
+        data: { keyword: input },
+        dataType: 'json'
+      })
+      .done(function(users) {
+        $("#user_search_result").empty();
+        if (users.length !== 0) {
+          users.forEach(function(user){
+            appendUser(user);
+          });
+        }
+        else {
+          appendNoUser("一致するユーザーはいません");
+        }
+      })
+      .fail(function() {
+        alert('ユーザー検索に失敗しました');
+      })
+    }
   });
 
   $("#user_search_result").on('click', ".user-search-add", function(){
