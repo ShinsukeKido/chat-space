@@ -1,12 +1,13 @@
-.main-content__body__info
-  .main-content__body__info__name
-    = message.user.name
-  .main-content__body__info__time
-    = message.created_at.to_s(:default)
-.main-content__body__message
-  - if message.content.present?
-    %p
-      = message.content
-  - else
-    %p
-      = image_tag message.image.url
+.main-content__body__content{ "data-message-id": "#{message.id}"}
+  .main-content__body__info
+    .main-content__body__info__name
+      = message.user.name
+    .main-content__body__info__time
+      = message.created_at.to_s(:default)
+  .main-content__body__message
+    - if message.content.present?
+      %p
+        = message.content
+    - if message.image.present?
+      %p
+        = image_tag message.image.url
